@@ -27,7 +27,9 @@ function displayBox() {
     </tr>
 
     <tr><td class="columnOfCards" id="c0">
+
         <table>
+            <tr><td><img src="/assets/images/back.png" id="Card1" style="width: 100px;"></td></tr>
             <tr><td class="cardLocation l0"></td></tr>
             <tr><td class="cardLocation l1"></td></tr>
             <tr><td class="cardLocation l2"></td></tr>
@@ -46,6 +48,7 @@ function displayBox() {
     </td>
         <td class="columnOfCards" id="c1">
             <table>
+                <tr><td><img src="/assets/images/back.png" id="Card2" style="width: 100px;"></td></tr>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
                 <tr><td class="cardLocation l2"></td></tr>
@@ -64,6 +67,7 @@ function displayBox() {
         </td>
         <td class="columnOfCards" id="c2">
             <table>
+                <tr><td><img src="/assets/images/back.png" id="Card3" style="width: 100px;"></td></tr>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
                 <tr><td class="cardLocation l2"></td></tr>
@@ -82,6 +86,7 @@ function displayBox() {
         </td>
         <td class="columnOfCards" id="c3">
             <table>
+                <tr><td><img src="/assets/images/back.png" id="Card4" style="width: 100px;"></td></tr>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
                 <tr><td class="cardLocation l2"></td></tr>
@@ -116,18 +121,22 @@ console.log(game);
 $( '.columnOfCards .cardLocation' ).html("");
 
     $.each(game.cols[0], function( key, val ) {
+    $('#Card1').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c0 .l'+key ).html(val.value + val.suit);
     });
 
  $.each(game.cols[1], function( key, val ) {
+ $('#Card2').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c1 .l'+key ).html(val.value + val.suit);
     });
 
  $.each(game.cols[2], function( key, val ) {
+  $('#Card3').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c2 .l'+key ).html(val.value + val.suit);
     });
 
  $.each(game.cols[3], function( key, val ) {
+ $('#Card4').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c3 .l'+key ).html(val.value + val.suit);
     });
 
