@@ -61,5 +61,13 @@ public class ApplicationController {
         g.move(colFrom,colTo);
         return  Results.json().render(g);
     }
+    public Result resetCards(Context context) {
+        Game g = new Game();
+        g.buildDeck();
+        g.shuffle();
+        g.dealFour();
+
+        return Results.json().render(g);
+    }
 
 }
