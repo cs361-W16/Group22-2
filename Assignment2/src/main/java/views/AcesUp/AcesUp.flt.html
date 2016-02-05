@@ -130,10 +130,22 @@ $( '.columnOfCards .cardLocation' ).html("");
  $.each(game.cols[3], function( key, val ) {
         $( '#c3 .l'+key ).html(val.value + val.suit);
     });
-
-
-
+    //error popout
+   if(game.checker == true){
+        var div = document.getElementById('failDiv');
+        if(div === null){
+            alert("Invalid removal.");
+        }
+    }
+    else{
+        var div = document.getElementById('failDiv');
+        if(div === null){}
+        else{
+            div.remove();
+        }
+    }
 }
+
 
 $.getJSON("http://localhost:8080/game", function( data ) {
 display(data);
@@ -198,6 +210,7 @@ $.ajax({
   dataType:"json",
 });
 });
+
 //new game button
 $("#resetCards").click(function(){
 $.ajax({
