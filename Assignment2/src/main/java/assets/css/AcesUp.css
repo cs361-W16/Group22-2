@@ -125,7 +125,7 @@ ul.vertical li a {
 
 table
 {
-    width:90%; /* Use any other measurement that is at least as long as your longest row.*/
+    width:90%; 
     padding:5px;
     color:#ff471a;
     font-size:30%;
