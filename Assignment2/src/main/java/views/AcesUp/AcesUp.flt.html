@@ -116,29 +116,25 @@ var game;
 
 function display(game) {
 console.log(game);
-
 $( '.columnOfCards .cardLocation' ).html("");
 
-    $.each(game.cols[0], function( key, val ) {
-    if (val.value != null)
-    $('#Card1').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
+ $.each(game.cols[0], function( key, val ) {
+ $('#Card1').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c0 .l'+key ).html(val.value + val.suit);
     });
-
  $.each(game.cols[1], function( key, val ) {
  $('#Card2').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c1 .l'+key ).html(val.value + val.suit);
     });
-
  $.each(game.cols[2], function( key, val ) {
   $('#Card3').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c2 .l'+key ).html(val.value + val.suit);
     });
-
  $.each(game.cols[3], function( key, val ) {
  $('#Card4').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c3 .l'+key ).html(val.value + val.suit);
     });
+
     //error popout
   if(game.checker == true){
         var div = document.getElementById('failDiv');

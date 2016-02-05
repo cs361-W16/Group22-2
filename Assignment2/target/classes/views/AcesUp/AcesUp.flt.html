@@ -1,5 +1,5 @@
 <div class="center">
-<h1 class="aligncenter"><img src="/assets/img/logo.png"></h1>
+    <h1 class="aligncenter"><img src="/assets/img/logo.png" ></h1>
 </div>
 
 <link href="/assets/css/AcesUp.css" rel="stylesheet">
@@ -27,7 +27,7 @@
     <tr><td class="columnOfCards" id="c0">
 
         <table>
-            <tr><td><img src="/assets/images/back.png" id="Card1" style="width: 100px;"></td></tr>
+            <tr><td><img src="/assets/img/back.png" id="Card1" style="width: 100px;"></td></tr>
             <tr><td class="cardLocation l0 column"></td></tr>
             <tr><td class="cardLocation l1 column"></td></tr>
             <tr><td class="cardLocation l2 column"></td></tr>
@@ -47,7 +47,7 @@
     </td>
         <td class="columnOfCards" id="c1">
             <table>
-                <tr><td><img src="/assets/images/back.png" id="Card2" style="width: 100px;"></td></tr>
+                <tr><td><img src="/assets/img/back.png" id="Card2" style="width: 100px;"></td></tr>
                 <tr><td class="cardLocation l0 column"></td></tr>
                 <tr><td class="cardLocation l1 column"></td></tr>
                 <tr><td class="cardLocation l2 column"></td></tr>
@@ -67,7 +67,7 @@
         </td>
         <td class="columnOfCards" id="c2">
             <table>
-                <tr><td><img src="/assets/images/back.png" id="Card3" style="width: 100px;"></td></tr>
+                <tr><td><img src="/assets/img/back.png" id="Card3" style="width: 100px;"></td></tr>
                 <tr><td class="cardLocation l0 column"></td></tr>
                 <tr><td class="cardLocation l1 column"></td></tr>
                 <tr><td class="cardLocation l2 column"></td></tr>
@@ -87,7 +87,7 @@
         </td>
         <td class="columnOfCards" id="c3">
             <table>
-                <tr><td><img src="/assets/images/back.png" id="Card4" style="width: 100px;"></td></tr>
+                <tr><td><img src="/assets/img/back.png" id="Card4" style="width: 100px;"></td></tr>
                 <tr><td class="cardLocation l0 column"></td></tr>
                 <tr><td class="cardLocation l1 column"></td></tr>
                 <tr><td class="cardLocation l2 column"></td></tr>
@@ -108,7 +108,7 @@
     </tr>
 </table>
 <div class="bottomCenter">
-<h2 class="aligncenter">Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton" class="button">Move</button></h2>
+    <h2 class="aligncenter">Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton" class="button">Move</button></h2>
 </div>
 <script>
 
@@ -116,33 +116,40 @@ var game;
 
 function display(game) {
 console.log(game);
-
 $( '.columnOfCards .cardLocation' ).html("");
 
-    $.each(game.cols[0], function( key, val ) {
-    $('#Card1').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
+ $.each(game.cols[0], function( key, val ) {
+ $('#Card1').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c0 .l'+key ).html(val.value + val.suit);
     });
-
  $.each(game.cols[1], function( key, val ) {
  $('#Card2').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c1 .l'+key ).html(val.value + val.suit);
     });
-
  $.each(game.cols[2], function( key, val ) {
   $('#Card3').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c2 .l'+key ).html(val.value + val.suit);
     });
-
  $.each(game.cols[3], function( key, val ) {
  $('#Card4').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c3 .l'+key ).html(val.value + val.suit);
     });
 
-
-
+    //error popout
+  if(game.checker == true){
+        var div = document.getElementById('failDiv');
+        if(div === null){
+            alert("Invalid removal.");
+        }
+    }
+    else{
+        var div = document.getElementById('failDiv');
+        if(div === null){}
+        else{
+            div.remove();
+        }
+    }
 }
-
 $.getJSON("http://localhost:8080/game", function( data ) {
 display(data);
 game = data;
@@ -206,6 +213,7 @@ $.ajax({
   dataType:"json",
 });
 });
+
 //new game button
 $("#resetCards").click(function(){
 $.ajax({
