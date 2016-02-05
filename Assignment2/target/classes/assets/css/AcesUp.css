@@ -16,3 +16,85 @@ font-weight: bold;
 width: 100px;
 background-color:#F0F0F0;
 }
+
+body
+{
+    font-family: Calibri, Verdana, Arial, Helvetica, "Helvetica Neue", sans-serif;
+    font-size:1.1em;
+    line-height:1.25;
+    background-image: url("http://www.casino-sidan.se/images/background.jpg");
+    background-position: center;
+     background-size: 100% 100%;
+}
+
+table
+{
+    width:90%; /* Use any other measurement that is at least as long as your longest row.*/
+    padding:5px;
+	color:#783102;
+	font-size:90%;
+	font-family:Calibri, Verdana, Arial, Helvetica, "Helvetica Neue", sans-serif;
+}
+
+.center
+{
+    margin: auto;
+    width: 50%;
+    padding: 5px;
+    background-color: white;
+}
+
+.tableCenter
+{
+    margin: auto;
+    width: 90%;
+    padding: 5px;
+}
+
+h1
+{
+    color:black;
+    font-size:30pt; margin-right:50%;
+}
+
+.aligncenter {text-align:center; margin:0 auto;}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+  }
+
+#left {
+    width: 20%;
+    position: fixed;
+}
+
+ul.vertical {
+	list-style-type:none;
+	white-space:nowrap;
+	margin:0;
+	padding:0;}
+ul.vertical li {
+	position:relative;
+	display:block;
+	margin:0;
+	padding:0;}
+ul.vertical li a {
+	text-decoration:none;
+	display:block;
+	background-color:transparent;
+	padding:12px;}
