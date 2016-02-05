@@ -76,3 +76,25 @@ h1
 .button:active {
   background-color: #3e8e41;
   transform: translateY(4px);
+  }
+
+#left {
+    width: 20%;
+    position: fixed;
+}
+
+ul.vertical {
+	list-style-type:none;
+	white-space:nowrap;
+	margin:0;
+	padding:0;}
+ul.vertical li {
+	position:relative;
+	display:block;
+	margin:0;
+	padding:0;}
+ul.vertical li a {
+	text-decoration:none;
+	display:block;
+	background-color:transparent;
+	padding:12px;}
