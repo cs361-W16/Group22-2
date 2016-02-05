@@ -16,3 +16,19 @@ font-weight: bold;
 width: 100px;
 background-color:#F0F0F0;
 }
+
+body
+{
+    font-family: Calibri, Verdana, Arial, Helvetica, "Helvetica Neue", sans-serif;
+    font-size:1.1em;
+    line-height:1.25;
+}
+
+table
+{
+    width:90%; /* Use any other measurement that is at least as long as your longest row.*/
+    padding:5px;
+	color:#783102;
+	font-size:90%;
+	font-family:Calibri, Verdana, Arial, Helvetica, "Helvetica Neue", sans-serif;
+}
