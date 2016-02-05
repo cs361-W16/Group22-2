@@ -121,6 +121,7 @@ console.log(game);
 $( '.columnOfCards .cardLocation' ).html("");
 
     $.each(game.cols[0], function( key, val ) {
+    if (val.value == null)
     $('#Card1').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c0 .l'+key ).html(val.value + val.suit);
     });
