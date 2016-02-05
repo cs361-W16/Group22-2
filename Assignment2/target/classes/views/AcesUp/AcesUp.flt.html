@@ -1,4 +1,4 @@
-<div class="center ">
+<div class="center">
 <h1 class="aligncenter">Aces Up</h1>
 </div>
 
@@ -9,42 +9,48 @@
 <body>
 <div id="left">
     <ul class="vertical">
-        <li><button id="dealButton" class="button" >Deal</button></li>
-        <li><a href="JavaScript:displayBox()"><img src="http://images.clipartpanda.com/question-purzen_Icon_with_question_mark_Vector_Clipart.png" width="50px" height="50px"alt="Submit"></a></li>
-        <li><button id="resetCards"><img src="http://3.bp.blogspot.com/-GQkJcAvEWjc/T4FW8biI5GI/AAAAAAAAAPI/BDpfeqX01Xg/s1600/RESTART+BUTTON+1.png" width="50px" length="50px" alt="New Game"/></button></li>
+        <li><button id="dealButton" class="mainButton"><img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg" width="60px" height="90px"alt="Submit"  title="Deal Button"></button></li>
+        <li><a href="JavaScript:displayBox()"><img src="http://images.clipartpanda.com/question-purzen_Icon_with_question_mark_Vector_Clipart.png" width="50px" height="50px"alt="Submit" title="How To Play"></a></li>
+        <li><button id="resetCards" class="mainButton"><img src="http://3.bp.blogspot.com/-GQkJcAvEWjc/T4FW8biI5GI/AAAAAAAAAPI/BDpfeqX01Xg/s1600/RESTART+BUTTON+1.png" width="60px" length="60px" alt="New Game" title="Restart Button"/></button></li>
     </ul>
 </div>
 
 
 <table class="tableCenter aligncenter">
     <tr class="title">
-        <td>Column0</td>
-        <td >Column1</td>
-        <td >Column2</td>
-        <td >Column3</td>
+        <td class="oddTitle">Column 0</td>
+        <td class="evenTitle">Column 1</td>
+        <td class="oddTitle">Column 2</td>
+        <td class="evenTitle">Column 3</td>
     </tr>
 
     <tr><td class="columnOfCards" id="c0">
+
         <table>
-            <tr><td class="cardLocation l0"></td></tr>
-            <tr><td class="cardLocation l1"></td></tr>
-            <tr><td class="cardLocation l2"></td></tr>
-            <tr><td class="cardLocation l3"></td></tr>
-            <tr><td class="cardLocation l4"></td></tr>
-            <tr><td class="cardLocation l5"></td></tr>
-            <tr><td class="cardLocation l6"></td></tr>
-            <tr><td class="cardLocation l7"></td></tr>
-            <tr><td class="cardLocation l8"></td></tr>
-            <tr><td class="cardLocation l9"></td></tr>
-            <tr><td class="cardLocation l10"></td></tr>
-            <tr><td class="cardLocation l11"></td></tr>
-            <tr><td class="cardLocation l12"></td></tr>
-            <tr><td class="cardLocation l13"></td></tr>
+
+            <tr><td><img src="/assets/images/back.png" id="Card1" style="width: 100px;"></td></tr>
+            <tr><td class="cardLocation l0 column"></td></tr>
+            <tr><td class="cardLocation l1 column"></td></tr>
+            <tr><td class="cardLocation l2 column"></td></tr>
+            <tr><td class="cardLocation l3 column"></td></tr>
+            <tr><td class="cardLocation l4 column"></td></tr>
+            <tr><td class="cardLocation l5 column"></td></tr>
+            <tr><td class="cardLocation l6 column"></td></tr>
+            <tr><td class="cardLocation l7 column"></td></tr>
+            <tr><td class="cardLocation l8 column"></td></tr>
+            <tr><td class="cardLocation l9 column"></td></tr>
+            <tr><td class="cardLocation l10 column"></td></tr>
+            <tr><td class="cardLocation l11 column"></td></tr>
+            <tr><td class="cardLocation l12 column"></td></tr>
+            <tr><td class="cardLocation l13 column"></td></tr>
+
         </table>
         <button id="Remove1" class="button">Remove</button>
     </td>
         <td class="columnOfCards" id="c1">
             <table>
+
+                <tr><td><img src="/assets/images/back.png" id="Card2" style="width: 100px;"></td></tr>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
                 <tr><td class="cardLocation l2"></td></tr>
@@ -59,11 +65,14 @@
                 <tr><td class="cardLocation l11"></td></tr>
                 <tr><td class="cardLocation l12"></td></tr>
                 <tr><td class="cardLocation l13"></td></tr>
+
             </table>
             <button id="Remove2" class="button">Remove</button>
         </td>
         <td class="columnOfCards" id="c2">
             <table>
+
+                <tr><td><img src="/assets/images/back.png" id="Card3" style="width: 100px;"></td></tr>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
                 <tr><td class="cardLocation l2"></td></tr>
@@ -78,11 +87,14 @@
                 <tr><td class="cardLocation l11"></td></tr>
                 <tr><td class="cardLocation l12"></td></tr>
                 <tr><td class="cardLocation l13"></td></tr>
+
             </table>
             <button id="Remove3" class="button">Remove</button>
         </td>
         <td class="columnOfCards" id="c3">
             <table>
+
+                <tr><td><img src="/assets/images/back.png" id="Card4" style="width: 100px;"></td></tr>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
                 <tr><td class="cardLocation l2"></td></tr>
@@ -97,14 +109,15 @@
                 <tr><td class="cardLocation l11"></td></tr>
                 <tr><td class="cardLocation l12"></td></tr>
                 <tr><td class="cardLocation l13"></td></tr>
+
             </table>
             <button id="Remove4" class="button">Remove</button>
         </td>
     </tr>
 </table>
-
-<h2>Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton" class="button">Move</button></h2>
-
+<div class="bottomCenter">
+<h2 class="aligncenter">Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton" class="button">Move</button></h2>
+</div>
 <script>
 
 var game;
@@ -115,18 +128,22 @@ console.log(game);
 $( '.columnOfCards .cardLocation' ).html("");
 
     $.each(game.cols[0], function( key, val ) {
+    $('#Card1').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c0 .l'+key ).html(val.value + val.suit);
     });
 
  $.each(game.cols[1], function( key, val ) {
+ $('#Card2').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c1 .l'+key ).html(val.value + val.suit);
     });
 
  $.each(game.cols[2], function( key, val ) {
+  $('#Card3').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c2 .l'+key ).html(val.value + val.suit);
     });
 
  $.each(game.cols[3], function( key, val ) {
+ $('#Card4').attr("src","/assets/img/"+val.value+"_of_"+val.suit+".png");
         $( '#c3 .l'+key ).html(val.value + val.suit);
     });
 
