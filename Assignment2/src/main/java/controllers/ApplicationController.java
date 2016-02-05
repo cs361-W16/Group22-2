@@ -41,6 +41,7 @@ public class ApplicationController {
         g.buildDeck();
         g.shuffle();
         g.dealFour();
+        g.checker=false;
 
         return Results.json().render(g);
     }
@@ -49,6 +50,7 @@ public class ApplicationController {
         if(context.getRequestPath().contains("deal")){
             g.dealFour();
         }
+        g.checker=false;
         return Results.json().render(g);
     }
 
@@ -59,6 +61,7 @@ public class ApplicationController {
 
     public Result moveCard(Context context, @PathParam("columnFrom") int colFrom, @PathParam("columnTo") int colTo, Game g){
         g.move(colFrom,colTo);
+        g.checker=false;
         return  Results.json().render(g);
     }
     public Result resetCards(Context context) {
