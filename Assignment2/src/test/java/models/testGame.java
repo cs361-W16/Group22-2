@@ -21,14 +21,7 @@ public class testGame {
         g.buildDeck();
         assertEquals(52,g.deck.size());
     }
-
-    @Test
-    public void testGameInit(){
-        Game g = new Game();
-        g.buildDeck();
-        g.shuffle();
-        assertNotEquals(2,g.deck.get(0).getValue());
-    }
+    
 
     @Test
     public void testGameStart(){

@@ -50,13 +50,6 @@ body
     padding: 5px;
 }
 
-h1
-{
-    color:#3e8e41;
-    font-size:45pt; margin-right:50%;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px black;
-}
 h2
 {
     color:#3e8e41;
@@ -137,9 +130,22 @@ ul.vertical li a {
     padding: 2px;
 }
 
+table
+{
+    width:90%; /* Use any other measurement that is at least as long as your longest row.*/
+    padding:5px;
+ 	color:#ff471a;
+ 	font-size:30%;
+ 	font-family:Calibri, Verdana, Arial, Helvetica, "Helvetica Neue", sans-serif;
+}
 .column
 {
     background-color: transparent;
+    text-align:center; margin:0 auto;
+    color:#ff471a;
+    font-size:20pt; margin-right:50%;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px black;
 }
 
 .mainButton
