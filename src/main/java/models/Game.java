@@ -23,10 +23,21 @@ public class Game {
         checker=false;
     }
 
+    public void buildSpainishDeck()
+    {
+        for (int i = 2; i < 11; i++)
+        {
+            deck.add(new Card(i, Suit.Coins));
+            deck.add(new Card(i, Suit.Cups));
+            deck.add(new Card(i, Suit.Swords));
+            deck.add(new Card(i, Suit.Carrots));
+        }
+    }
 
-
-    public void buildDeck() {
-        for(int i = 2; i < 15; i++){
+    public void buildDeck()
+    {
+        for(int i = 2; i < 15; i++)
+        {
             deck.add(new Card(i,Suit.Clubs));
             deck.add(new Card(i,Suit.Hearts));
             deck.add(new Card(i,Suit.Diamonds));
@@ -34,6 +45,7 @@ public class Game {
 
         }
     }
+
     public void shuffle() {
         long seed = System.nanoTime();
         Collections.shuffle(deck, new Random(seed));

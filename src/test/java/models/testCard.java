@@ -32,5 +32,4 @@ public class testCard {
         assertEquals(0,g.cols.get(0).size());
     }
 
-
 }

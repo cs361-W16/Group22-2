@@ -48,9 +48,9 @@ public class ApplicationController {
         return Results.json().render(g);
     }
 
-    public Result gameGet2(){
+    public Result gameGetSpain(){
         Game g = new Game();
-        g.buildDeck();
+        g.buildSpainishDeck();
         g.shuffle();
         g.dealFour();
         g.checker=false;
