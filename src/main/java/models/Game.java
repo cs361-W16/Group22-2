@@ -36,7 +36,7 @@ public class Game {
                 deck.add(new Card(i, Suit.Spades));
             }
         }else if (cn == 1){
-            for(int i = 2; i < 13; i++) {
+            for(int i = 2; i < 12; i++) {
                 deck.add(new Card(i, Suit.Coins));
                 deck.add(new Card(i, Suit.Cups));
                 deck.add(new Card(i, Suit.Swords));
@@ -55,6 +55,7 @@ public class Game {
             cols.add(new ArrayList<Card>());
             cols.add(new ArrayList<Card>());
             buildDeck();
+            shuffle();
 
         }
     }
@@ -121,11 +122,9 @@ public class Game {
 
 
     public void move(int colFrom, int colTo) {
-        if (this.cn == 0) {
             Card cardToMove = getTopCard(colFrom);
             this.removeCardFromCol(colFrom);
             this.addCardToCol(colTo, cardToMove);
-        }
     }
 
     private void addCardToCol(int colTo, Card cardToMove) {
