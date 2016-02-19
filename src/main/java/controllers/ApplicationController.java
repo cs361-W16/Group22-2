@@ -35,8 +35,20 @@ public class ApplicationController {
     public Result acesUp() {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
-
+    public Result SpanishAcesUp() {
+        return Results.html().template("views/AcesUp/SpanishAcesUp.flt.html");
+    }
     public Result gameGet(){
+        Game g = new Game();
+        g.buildDeck();
+        g.shuffle();
+        g.dealFour();
+        g.checker=false;
+
+        return Results.json().render(g);
+    }
+
+    public Result gameGet2(){
         Game g = new Game();
         g.buildDeck();
         g.shuffle();
