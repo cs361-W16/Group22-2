@@ -34,9 +34,6 @@ public class Game {
 
         }
     }
-
-
-
     public void shuffle() {
         long seed = System.nanoTime();
         Collections.shuffle(deck, new Random(seed));
