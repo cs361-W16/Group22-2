@@ -3,15 +3,20 @@
 
 
 <h1>${i18n("hello.world")}</h1>
-<p>${i18n("hello.world.json")}</p>
-<a href="/hello_world.json">Hello World Json</a>
+<br>
 
-    <button id="startEnglishGame" type="button">Start English Game!</button>
+
+    <button id="startGame" type="button">Normal Aces Up</button>
+    <button id="startGame2" type="button">Spanish Aces Up</button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript">
-    document.getElementById("startEnglishGame").onclick = function () {
-    location.href = "/AcesUp";
 
+    document.getElementById("startGame").onclick = function () {
+    location.href = "/AcesUp";
+    }
+
+    document.getElementById("startGame2").onclick = function () {
+    location.href = "/AcesUp2";
     }
     </script>
 </@layout.myLayout>
