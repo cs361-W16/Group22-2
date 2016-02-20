@@ -14,6 +14,7 @@ public class testCard {
         assertEquals(Suit.Clubs,c.getSuit());
     }
 
+
     @Test
     public void testToString(){
         Card c = new Card(5,Suit.Clubs);

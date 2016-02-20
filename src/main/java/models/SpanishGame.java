@@ -10,6 +10,7 @@ public class SpanishGame extends Game
     {
         for (int i = 1; i < 11; i++)
         {
+            
             deck.add(new Card(i, Suit.Coins));
             deck.add(new Card(i, Suit.Cups));
             deck.add(new Card(i, Suit.Swords));
