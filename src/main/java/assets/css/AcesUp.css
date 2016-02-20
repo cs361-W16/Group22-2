@@ -149,17 +149,19 @@ h2
     text-shadow: 2px 2px 5px black;
 }
 .columnOfCards{
-    padding-top: 150px;
-    height: 200px;
+    padding-top: 200px;
+    height: 100px;
     vertical-align: text-top;
 }
 
 .cardLocation{
     display: inline;
     position: relative;
-    width: 100px;
-    margin-top: -200px;
-    padding:50px;
+    margin-top:-300px;
+    width:100px;
+    padding:100px;
+
+
 }
 
 

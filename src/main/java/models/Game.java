@@ -27,21 +27,6 @@ public abstract class Game {
 
     public abstract void buildDeck();
 
-
-    public void ChangeDeck(int i){
-        if (cn != i){
-            cn = i;
-            deck = new ArrayList<>();
-            cols = new ArrayList<>();
-            cols.add(new ArrayList<Card>());
-            cols.add(new ArrayList<Card>());
-            cols.add(new ArrayList<Card>());
-            cols.add(new ArrayList<Card>());
-            buildDeck();
-            shuffle();
-        }
-    }
-
     public void shuffle() {
         long seed = System.nanoTime();
         Collections.shuffle(deck, new Random(seed));
