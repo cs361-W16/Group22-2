@@ -12,18 +12,33 @@ public abstract class Game {
     public java.util.List<Card> deck = new ArrayList<>();
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
+    public int cn;
 
     public boolean checker;
 
     public Game(){
+        cn=0;
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         checker=false;
     }
-
     public abstract void buildDeck();
+
+    public void ChangeDeck(int i){
+        if (cn != i){
+            cn = i;
+            deck = new ArrayList<>();
+            cols = new ArrayList<>();
+            cols.add(new ArrayList<Card>());
+            cols.add(new ArrayList<Card>());
+            cols.add(new ArrayList<Card>());
+            cols.add(new ArrayList<Card>());
+            buildDeck();
+            shuffle();
+        }
+    }
 
     public void shuffle() {
         long seed = System.nanoTime();
@@ -88,9 +103,9 @@ public abstract class Game {
 
 
     public void move(int colFrom, int colTo) {
-        Card cardToMove = getTopCard(colFrom);
-        this.removeCardFromCol(colFrom);
-        this.addCardToCol(colTo,cardToMove);
+            Card cardToMove = getTopCard(colFrom);
+            this.removeCardFromCol(colFrom);
+            this.addCardToCol(colTo, cardToMove);
     }
 
     private void addCardToCol(int colTo, Card cardToMove) {
