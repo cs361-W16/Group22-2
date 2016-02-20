@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * Created by michaelhilton on 1/25/16.
  */
-public class Game {
+public abstract class Game {
 
     public java.util.List<Card> deck = new ArrayList<>();
 
@@ -23,28 +23,7 @@ public class Game {
         checker=false;
     }
 
-    public void buildSpainishDeck()
-    {
-        for (int i = 1; i < 11; i++)
-        {
-            deck.add(new Card(i, Suit.Coins));
-            deck.add(new Card(i, Suit.Cups));
-            deck.add(new Card(i, Suit.Swords));
-            deck.add(new Card(i, Suit.Carrots));
-        }
-    }
-
-    public void buildDeck()
-    {
-        for(int i = 2; i < 15; i++)
-        {
-            deck.add(new Card(i,Suit.Clubs));
-            deck.add(new Card(i,Suit.Hearts));
-            deck.add(new Card(i,Suit.Diamonds));
-            deck.add(new Card(i,Suit.Spades));
-
-        }
-    }
+    public abstract void buildDeck();
 
     public void shuffle() {
         long seed = System.nanoTime();
@@ -123,4 +102,6 @@ public class Game {
 
 
     }
+
+
 }
