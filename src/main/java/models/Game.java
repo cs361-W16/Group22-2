@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * Created by michaelhilton on 1/25/16.
  */
-public class Game {
+public abstract class Game {
 
     public java.util.List<Card> deck = new ArrayList<>();
 
@@ -25,7 +25,7 @@ public class Game {
         checker=false;
     }
 
-    public void buildDeck() {}
+    public abstract void buildDeck();
 
 
     public void ChangeDeck(int i){
@@ -119,4 +119,6 @@ public class Game {
 
 
     }
+
+
 }

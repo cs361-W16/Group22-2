@@ -16,7 +16,9 @@
 
 package controllers;
 
+import models.AmericanGame;
 import models.Game;
+import models.SpanishGame;
 import ninja.Context;
 import ninja.Result;
 import ninja.Results;
@@ -39,7 +41,7 @@ public class ApplicationController {
         return Results.html().template("views/AcesUp/SpanishAcesUp.flt.html");
     }
     public Result gameGet(){
-        Game g = new Game();
+        Game g = new AmericanGame();
         g.buildDeck();
         g.shuffle();
         g.dealFour();
@@ -48,9 +50,9 @@ public class ApplicationController {
         return Results.json().render(g);
     }
 
-    public Result gameGetSpain(){
-        Game g = new Game();
-        g.buildSpainishDeck();
+    public Result gameGet2(){
+        Game g = new SpanishGame();
+        g.buildDeck();
         g.shuffle();
         g.dealFour();
         g.checker=false;
@@ -58,7 +60,7 @@ public class ApplicationController {
         return Results.json().render(g);
     }
 
-    public Result dealPost(Context context, Game g) {
+    public Result dealPost(Context context, AmericanGame g) {
         if(context.getRequestPath().contains("deal")){
             g.dealFour();
         }
@@ -66,18 +68,27 @@ public class ApplicationController {
         return Results.json().render(g);
     }
 
-    public Result removeCard(Context context, @PathParam("column") int colNumber, Game g){
+    public Result removeCard(Context context, @PathParam("column") int colNumber, AmericanGame g){
         g.remove(colNumber);
         return  Results.json().render(g);
     }
 
-    public Result moveCard(Context context, @PathParam("columnFrom") int colFrom, @PathParam("columnTo") int colTo, Game g){
+    public Result moveCard(Context context, @PathParam("columnFrom") int colFrom, @PathParam("columnTo") int colTo, AmericanGame g){
         g.move(colFrom,colTo);
         g.checker=false;
         return  Results.json().render(g);
     }
     public Result resetCards(Context context) {
-        Game g = new Game();
+        Game g = new AmericanGame();
+        g.buildDeck();
+        g.shuffle();
+        g.dealFour();
+
+        return Results.json().render(g);
+    }
+
+    public Result resetCards2(Context context) {
+        Game g = new SpanishGame();
         g.buildDeck();
         g.shuffle();
         g.dealFour();
