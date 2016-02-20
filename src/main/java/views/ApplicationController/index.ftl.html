@@ -1,20 +1,29 @@
-<#import "../layout/defaultLayout.ftl.html" as layout> 
-<@layout.myLayout "Home page">    
+
+<#import "../layout/defaultLayout.ftl.html" as layout>
+    <@layout.myLayout "Home page">
 
 
-<h1>${i18n("hello.world")}</h1>
-<br>
+    <div class="center">
+        <h1 class="aligncenter"><img src="/assets/img/logo.png" ></h1>
+    </div>
 
+    <br>
 
-    <button id="startGame" type="button">Normal Aces Up</button>
-    <button id="startGame2" type="button">Spanish Aces Up</button>
+    <table>
+        <tr>
+            <td><img src="/assets/img/14_of_hearts.png"  style="width: 150px;"></td>
+            <td><img src="/assets/img/10_of_swords.png"  style="width: 150px;"></td>
+        </tr>
+        <tr>
+    <td><button id="startGame"  type="button">Normal Aces Up</button></td>
+    <td><button id="startGame2" type="button">Spanish Aces Up</button></td>
+        </tr>
+    </table>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript">
-
     document.getElementById("startGame").onclick = function () {
     location.href = "/AcesUp";
     }
-
     document.getElementById("startGame2").onclick = function () {
     location.href = "/SpanishAcesUp";
     }
