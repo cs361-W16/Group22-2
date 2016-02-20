@@ -48,7 +48,7 @@ public class ApplicationController {
         return Results.json().render(g);
     }
 
-    public Result gameGetSpain(){
+    public Result gameGet2(){
         Game g = new Game();
         g.buildSpainishDeck();
         g.shuffle();
@@ -79,6 +79,15 @@ public class ApplicationController {
     public Result resetCards(Context context) {
         Game g = new Game();
         g.buildDeck();
+        g.shuffle();
+        g.dealFour();
+
+        return Results.json().render(g);
+    }
+
+    public Result resetCards2(Context context) {
+        Game g = new Game();
+        g.buildSpainishDeck();
         g.shuffle();
         g.dealFour();
 
