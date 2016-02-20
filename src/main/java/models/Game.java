@@ -12,10 +12,12 @@ public class Game {
     public java.util.List<Card> deck = new ArrayList<>();
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
+    public int cn;
 
     public boolean checker;
 
     public Game(){
+        cn=0;
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
@@ -36,13 +38,27 @@ public class Game {
 
     public void buildDeck()
     {
-        for(int i = 2; i < 15; i++)
+        for (int i = 2; i < 15; i++)
         {
-            deck.add(new Card(i,Suit.Clubs));
-            deck.add(new Card(i,Suit.Hearts));
-            deck.add(new Card(i,Suit.Diamonds));
-            deck.add(new Card(i,Suit.Spades));
+            deck.add(new Card(i, Suit.Clubs));
+            deck.add(new Card(i, Suit.Hearts));
+            deck.add(new Card(i, Suit.Diamonds));
+            deck.add(new Card(i, Suit.Spades));
+        }
+    }
 
+
+    public void ChangeDeck(int i){
+        if (cn != i){
+            cn = i;
+            deck = new ArrayList<>();
+            cols = new ArrayList<>();
+            cols.add(new ArrayList<Card>());
+            cols.add(new ArrayList<Card>());
+            cols.add(new ArrayList<Card>());
+            cols.add(new ArrayList<Card>());
+            buildDeck();
+            shuffle();
         }
     }
 
@@ -109,9 +125,9 @@ public class Game {
 
 
     public void move(int colFrom, int colTo) {
-        Card cardToMove = getTopCard(colFrom);
-        this.removeCardFromCol(colFrom);
-        this.addCardToCol(colTo,cardToMove);
+            Card cardToMove = getTopCard(colFrom);
+            this.removeCardFromCol(colFrom);
+            this.addCardToCol(colTo, cardToMove);
     }
 
     private void addCardToCol(int colTo, Card cardToMove) {
