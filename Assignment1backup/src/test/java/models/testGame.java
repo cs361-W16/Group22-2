@@ -22,22 +22,12 @@ public class testGame {
         assertEquals(52,g.deck.size());
     }
 
-
-    @Test
-    public void testGameChangeDeck(){
-        Game g = new Game();
-        g.buildDeck();
-        g.ChangeDeck(1);
-        assertEquals(40,g.deck.size());
-        g.ChangeDeck(0);
-        assertEquals(52,g.deck.size());
-    }
     @Test
     public void testGameInit(){
         Game g = new Game();
         g.buildDeck();
         g.shuffle();
-        assertNotEquals(1,g.deck.get(0).getValue());
+        assertNotEquals(2,g.deck.get(0).getValue());
     }
 
     @Test
@@ -62,14 +52,6 @@ public class testGame {
         assertEquals("4Clubs",g.cols.get(2).get(0).toString());
         assertEquals("5Clubs",g.cols.get(3).get(0).toString());
     }
-    @Test
-    public void testMove(){
-        Game g = new Game();
-        g.buildDeck();
-        g.customDeal(0,3,6,9);
-        g.move(0,1);
-        assertEquals(3,g.cols.get(1).get(0).getValue());
-    }
 
     @Test
     public void testRemoveFunction(){
@@ -80,25 +62,6 @@ public class testGame {
         assertEquals(0,g.cols.get(2).size());
     }
 
-    @Test
-    public void testDealFour() {
-        Game g = new Game();
-        g.buildDeck();
-        g.shuffle();
-        g.dealFour();
 
-        assertEquals(1,g.cols.get(0).size());
-        assertEquals(1,g.cols.get(1).size());
-        assertEquals(1,g.cols.get(2).size());
-        assertEquals(1,g.cols.get(3).size());
-
-        g.dealFour();
-
-
-        assertEquals(2,g.cols.get(0).size());
-        assertEquals(2,g.cols.get(1).size());
-        assertEquals(2,g.cols.get(2).size());
-        assertEquals(2,g.cols.get(3).size());
-    }
 
 }
